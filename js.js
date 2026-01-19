@@ -21,5 +21,8 @@
 
     let message =" ";
 
+    let value = 42;
+    console.log(typeof value);
+    ``
  
     
