@@ -23,6 +23,6 @@
 
     let value = 42;
     console.log(typeof value);
-    ``
- 
+
+    const wallet = createWallet();
     
