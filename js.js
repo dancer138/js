@@ -25,4 +25,18 @@
     console.log(typeof value);
 
     const wallet = createWallet();
+
+    Promise.catch(error => {
+        console.log(error);
+    })
     
+    Promise.finally(() => {
+        console.log("конец");
+    })
+
+    new Promise.data((HI) => {
+then(result => "!");
+console.log(Promise.data);
+})
+
+fortch("https")
