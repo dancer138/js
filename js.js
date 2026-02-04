@@ -128,8 +128,8 @@ const img = new Image();
 img.src = "forest2/png";
 img.onload = ()=> contexst.drawImage(img, 0, 0);
 
-const canvas = document.getElementById("myCanvas");
-const ctx = canvas.getContext("2d");
+const canvas2 = document.getElementById("myCanvas");
+// const ctx = canvas.getContext("2d");
 
 const bg = new Image();
 bg.src = "bg.jpg";
@@ -150,7 +150,7 @@ bg.onload = onLoad;
 hero.onload = onLoad;
 
 
-const img = new Image();
+// const img = new Image();
 img.src = "texture.png"; 
 
 img.onload = () => {
@@ -162,7 +162,7 @@ img.onload = () => {
 
 
 
-const img = new Image();
+// const img = new Image();
 img.src = "image.png"; 
 img.onload = () => {
  
@@ -172,3 +172,38 @@ img.onload = () => {
     ctx.drawImage(img, 50, 50, 200, 150);
     ctx.globalAlpha = 1;
 };
+
+ctx.shadowColor = "rgba(0, 0, 0.35)";
+ctx.shadowBlur =12;
+ctx.shadow0ffseX = 8;
+ctx.shadow0ffseY = 8;
+
+
+
+ctx.shadowColor = "rgba(0,0,0,0.5)";
+ctx.shadowBlur = 6;
+ctx.shadowOffsetX = 3;
+ctx.shadowOffsetY = 3;
+
+ctx.font = "32px Arial";
+ctx.fillStyle = "#ffffff";
+ctx.fillText("Canvas!", 60, 80);
+
+const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = imageData.data;
+
+for (let i = 0; i < data.length; i += 4) {
+    const r = data[i];
+    const g = data[i + 1];
+    const b = data[i + 2];
+
+    const gray = (r + g + b) / 3;
+
+    data[i] = gray; // R
+    data[i + 1] = gray; // G
+    data[i + 2] = gray; // B
+}
+
+// A не трогаем
+
+ctx.putImageData(imageData, 0, 0);
