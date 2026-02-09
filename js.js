@@ -208,3 +208,4 @@ for (let i = 0; i < data.length; i += 4) {
 // A не трогаем
 
 ctx.putImageData(imageData, 0, 0);
+
