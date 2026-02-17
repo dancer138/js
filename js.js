@@ -21,10 +21,10 @@
 
     let message =" "; 
 
-//     let value = 42;
-//     console.log(typeof value);
+    let value = 42;
+    console.log(typeof value);
 
-//     // const wallet = createWallet();
+    // const wallet = createWallet();
 
     Promise.catch(error => {
         console.log(error);
@@ -39,3 +39,26 @@ then(result => "!");
 console.log(Promise.data);
 })
 
+
+const img = new Image();
+img.src = "texture.png"; 
+
+img.onload = () => {
+    const pattern = ctx.createPattern(img, "repeat");
+    ctx.fillStyle = pattern;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+};
+ 
+
+
+
+const img = new Image();
+img.src = "image.png"; 
+img.onload = () => {
+ 
+
+    
+    ctx.globalAlpha = 0.5;
+    ctx.drawImage(img, 50, 50, 200, 150);
+    ctx.globalAlpha = 1;
+};
